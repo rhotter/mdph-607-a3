@@ -110,4 +110,25 @@ title('Dataset 2 with FBP + Hann filter')
 %filter has two distribution on dataset 2, one would be for the background 
 %and the other would be for Shepp-Logan structure. The ramp filter 
 %therefore does not discrimate the noise as easily as the Hann filter.
+%% Question 2
+
+t_i=[192, 192, 196, 188];
+blank=[200, 200, 200, 200];
+
+m = transpose(log(blank./t_i));
+A=[1,0,1;0,1,0;0,0,1;1,1,0];
+
+mu=[1;1;1];
+
+%first iteration
+mu=transpose(A*transpose((m-A*mu)\A)\A)+mu
+
+for j=1:998
+mu=transpose(A*transpose((m-A*mu)\A)\A)+mu;
+end
+
+%at the 1000 iteration
+mu=transpose(A*transpose((m-A*mu)\A)\A)+mu
+
+
 
