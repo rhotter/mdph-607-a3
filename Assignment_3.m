@@ -3,12 +3,12 @@
 % Wen Da Lu
 
 %loading data
-load("C:\Users\wenda\Desktop\School\2021 Fall\MDPH 607\mdph607_projection_data_v2.mat")
+% load("C:\Users\wenda\Desktop\School\2021 Fall\MDPH 607\mdph607_projection_data_v2.mat")
 
 %Question 1.a
 figure(1)
 subplot(2,1,1)
-image(data1)
+image(dataset1)
 subplot(2,1,2)
 image(dataset2)
 
